@@ -24,13 +24,13 @@ public class Controller1 extends JFrame
     private JButton quit;        // As it says
     
     // Constructor
-    public Controller1(Model model) {
+    public Controller1(Model model, String frameTitle) {
         
         // Record reference to the model
         this.model = model;
         
         // Configure the window
-        setTitle("Controller1");
+        setTitle("frameTitle");
         setLocation(40,40);
         setSize(350,150);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
