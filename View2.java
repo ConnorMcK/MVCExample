@@ -1,4 +1,4 @@
-package mvcexample;
+
 
 // This is the red view
 // It displays the B component of the model (data base)

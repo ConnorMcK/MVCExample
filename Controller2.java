@@ -1,5 +1,3 @@
-package mvcexample;
-
 // Controller 2: displays views 3 and 4
 //               (displaying A and B components of the model)
 // Offers two button: clear views and refresh views - see below.
@@ -18,6 +16,7 @@ public class Controller2 extends JFrame
     private View4 view4;
     private JButton clearViews;   // For direct message to views
     private JButton refreshViews; // To prompt them to refresh their contents from the model
+    private JButton incB; // A button to increment database B
  
     // Constructor
     public Controller2(Model model) {
@@ -37,6 +36,9 @@ public class Controller2 extends JFrame
         clearViews = new JButton("Clear views");
         window.add(clearViews);
         clearViews.addActionListener(this);
+        incB = new JButton("Increment B");
+        window.add(incB);
+        incB.addActionListener(this);
         refreshViews = new JButton("Refresh views");
         window.add(refreshViews);
         refreshViews.addActionListener(this);
@@ -61,6 +63,9 @@ public class Controller2 extends JFrame
         if (e.getSource() == refreshViews) {
             view3.update();
             view4.update();
+        }
+        else if (e.getSource() == incB) {
+            model.modifyB();
         }
         
     } // actionPerformed

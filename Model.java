@@ -1,4 +1,4 @@
-package mvcexample;
+
 
 // A database with two counter components
 
@@ -24,6 +24,13 @@ public class Model extends Observable {
         return dataBaseA;
         
     } // getDataA
+
+    public void modifyB() { // Mutator method for B component
+
+        dataBaseB++;
+        setChanged();
+        notifyObservers();
+    }
  
     public int getDataB() {
         
