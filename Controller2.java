@@ -12,19 +12,18 @@ import javax.swing.*;
 
 public class Controller2 extends JFrame
                          implements ActionListener {
-  
+
     private Model model;
     private View3 view3;
     private View4 view4;
     private JButton clearViews;   // For direct message to views
-    //private JButton refreshViews; // To prompt them to refresh their contents from the model
- 
+
     // Constructor
     public Controller2(Model model) {
-    
+
         // Record reference to the model
         this.model = model;
-        
+
         // Configure the window
         setTitle("Controller2");
         setLocation(40,200);
@@ -32,7 +31,7 @@ public class Controller2 extends JFrame
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         Container window = getContentPane();
         window.setLayout(new FlowLayout());     // The default is that JFrame uses BorderLayout
-        
+
         // Set up input GUI
         clearViews = new JButton("Clear views");
         window.add(clearViews);
@@ -45,26 +44,21 @@ public class Controller2 extends JFrame
         window.add(view3);
         view4 = new View4(this, model);
         window.add(view4);
-        
+
         // Display the frame
         setVisible(true);
-        
+
     } // constructor
-  
+
     // Button click handling:
     public void actionPerformed(ActionEvent e) {
-      
+
         if (e.getSource() == clearViews) {
             view3.clear();
             view4.clear();
         }
-       // if (e.getSource() == refreshViews) {
-         //   view3.update();
-           // view4.update();
-        //}
-        
     } // actionPerformed
-    
+
 } // class Controller2
 
 
