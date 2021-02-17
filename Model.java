@@ -1,3 +1,4 @@
+
 // A database with two counter components
 import java.util.*;  // For Observable
 
@@ -21,6 +22,13 @@ public class Model extends Observable {
         return dataBaseA;
         
     } // getDataA
+
+    public void modifyB() { // Mutator method for B component
+
+        dataBaseB++;
+        setChanged();
+        notifyObservers();
+    }
  
     public int getDataB() {
         
