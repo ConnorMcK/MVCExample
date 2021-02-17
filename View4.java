@@ -1,5 +1,3 @@
-package mvcexample;
-
 // This is the pink view.
 // It displays the B component of the model (data base).
 // As supplied, this view does not subscribe to the model as an Observer,
