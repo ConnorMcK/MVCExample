@@ -1,5 +1,4 @@
 
-
 // This is the pink view.
 // It displays the B component of the model (data base).
 // As supplied, this view does not subscribe to the model as an Observer,
@@ -29,6 +28,7 @@ public class View4 extends JPanel implements Observer{
         display = new JTextField("No data", 15);
         add(display);
 
+
         model.addObserver(this);
     } // constructor
     
@@ -36,6 +36,18 @@ public class View4 extends JPanel implements Observer{
     public void update() {
       
     } // update
+
+        
+        model.addObserver(this);
+    } // constructor
+    
+  
+    public void update(Observable o, Object arg) {
+        // Fetch (potentially) updated information and display it
+        int b = model.getDataB();
+        display.setText("Model data B: " + b);
+    }
+
     
     // Called by the controller to clear the view:
     public void clear() {
@@ -44,10 +56,14 @@ public class View4 extends JPanel implements Observer{
       
     } // clear
 
+
     @Override
     public void update(Observable o, Object arg) {
         // Fetch (potentially) updated information and display it
         int b = model.getDataB();
         display.setText("Model data B: " + b);
     }
+
+   
+
 } // class View4

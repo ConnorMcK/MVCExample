@@ -1,7 +1,5 @@
 
-
 // A database with two counter components
-
 import java.util.*;  // For Observable
 
 public class Model extends Observable {
