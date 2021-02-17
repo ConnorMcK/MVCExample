@@ -37,9 +37,9 @@ public class Controller2 extends JFrame
         clearViews = new JButton("Clear views");
         window.add(clearViews);
         clearViews.addActionListener(this);
-        refreshViews = new JButton("Refresh views");
-        window.add(refreshViews);
-        refreshViews.addActionListener(this);
+      //  refreshViews = new JButton("Refresh views");
+      //  window.add(refreshViews);
+      //  refreshViews.addActionListener(this);
         // Create views
         view3 = new View3(this, model);
         window.add(view3);
