@@ -20,14 +20,14 @@ public class Controller2 extends JFrame implements ActionListener {
     private JButton incB; // A button to increment database B
 
     // Constructor
-    public Controller2(Model model, String frameTitle) {
+    public Controller2(Model model, String frameTitle, int x, int y) {
 
         // Record reference to the model
         this.model = model;
 
         // Configure the window
         setTitle(frameTitle);
-        setLocation(40, 200);
+        setLocation(x, y);
         setSize(350, 150);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         Container window = getContentPane();

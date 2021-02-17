@@ -22,7 +22,7 @@ public class Controller1 extends JFrame implements ActionListener {
     private JButton quit;        // As it says
 
     // Constructor
-    public Controller1(Model model, String frameTitle) {
+    public Controller1(Model model, String frameTitle, int x, int y) {
 
         // Record reference to the model
         this.model = model;
@@ -30,7 +30,7 @@ public class Controller1 extends JFrame implements ActionListener {
         // Configure the window
 
         setTitle(frameTitle);
-        setLocation(40, 40);
+        setLocation(x, y);
         setSize(350, 150);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         Container window = getContentPane();
