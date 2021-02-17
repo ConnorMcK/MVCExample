@@ -1,3 +1,5 @@
+package mvcexample;
+
 // This is the yellow view.
 // It displays the A component of the model (data base).
 // As supplied, this view does not subscribe to the model as an Observer,
