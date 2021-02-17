@@ -1,7 +1,5 @@
-package mvcexample;
 
 /**
- *
  * @author savi
  */
 // Controller 1: displays views 1 and 2 
@@ -9,34 +7,34 @@ package mvcexample;
 // Offers three buttons: clear views, increment A in the model 
 // and quit - see below
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Controller1 extends JFrame
-                         implements ActionListener {
-  
+public class Controller1 extends JFrame implements ActionListener {
+
     private Model model;
     private View1 view1;
     private View2 view2;
     private JButton clearViews;  // For direct message to views
     private JButton incA;        // To prompt the model to "modify" itself (A component)
     private JButton quit;        // As it says
-    
+
     // Constructor
-    public Controller1(Model model) {
-        
+    public Controller1(Model model, String frameTitle) {
+
         // Record reference to the model
         this.model = model;
-        
+
         // Configure the window
-        setTitle("Controller1");
-        setLocation(40,40);
-        setSize(350,150);
+        setTitle(frameTitle);
+        setLocation(40, 40);
+        setSize(350, 150);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         Container window = getContentPane();
         window.setLayout(new FlowLayout());     // The default is that JFrame uses BorderLayout
-        
+
         // Set up input GUI
         clearViews = new JButton("Clear views");
         window.add(clearViews);
@@ -52,25 +50,24 @@ public class Controller1 extends JFrame
         window.add(view1);
         view2 = new View2(this, model);
         window.add(view2);
-        
+
         // Display the frame
         setVisible(true);
-      
+
     } // constructor
-  
+
     // Button click handling:
     public void actionPerformed(ActionEvent e) {
-      
+
         if (e.getSource() == clearViews) {
             view1.clear();
             view2.clear();
-        }
-        else if (e.getSource() == incA) 
+        } else if (e.getSource() == incA)
             model.modifyA();     // The model will trigger the views to update themselves
         else if (e.getSource() == quit)
             System.exit(0);
-          
-  } // actionPerformed
-  
+
+    } // actionPerformed
+
 } // class Controller1
 
