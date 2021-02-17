@@ -28,6 +28,7 @@ public class Controller1 extends JFrame implements ActionListener {
         this.model = model;
 
         // Configure the window
+
         setTitle(frameTitle);
         setLocation(40, 40);
         setSize(350, 150);
