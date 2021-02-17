@@ -41,13 +41,9 @@ public class Controller2 extends JFrame implements ActionListener {
         incB = new JButton("Increment B");
         window.add(incB);
         incB.addActionListener(this);
-        refreshViews = new JButton("Refresh views");
-        window.add(refreshViews);
-        refreshViews.addActionListener(this);
+        
 
-      //  refreshViews = new JButton("Refresh views");
-      //  window.add(refreshViews);
-      //  refreshViews.addActionListener(this);
+  
 
         // Create views
         view3 = new View3(this, model);
@@ -68,10 +64,7 @@ public class Controller2 extends JFrame implements ActionListener {
             view4.clear();
         }
 
-        if (e.getSource() == refreshViews) {
-            view3.update();
-            view4.update();
-        }
+   
         else if (e.getSource() == incB) {
             model.modifyB();
         }
